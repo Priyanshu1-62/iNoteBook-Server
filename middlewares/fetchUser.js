@@ -21,7 +21,6 @@ const fetchUserByRefreshToken = async (req, res, next)=>{
 
         const decoded_payload=jwt.verify(token, process.env.JWT_REFRESH_SECRET);
         req.user=decoded_payload;
-        console.log("Refresh token is okay", req.user);
         next();
     } catch (error) {
         res.status(401).json({errors: "Invalid token"});
