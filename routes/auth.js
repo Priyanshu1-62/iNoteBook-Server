@@ -83,8 +83,8 @@ async (req, res)=>{
 
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            secure: false,
-            sameSite: "Lax",
+            secure: true,
+            sameSite: "None",
             path: "/",
             maxAge: 15*24*60*60*1000
         });
@@ -134,8 +134,8 @@ async (req, res)=>{
 
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            secure: false,
-            sameSite: "Lax",
+            secure: true,
+            sameSite: "None",
             path: "/",
             maxAge: 15*24*60*60*1000
         });
@@ -181,8 +181,9 @@ router.post('/logout', fetchUserByRefreshToken, async (req, res)=>{
 
         res.clearCookie("refreshToken", {
             httpOnly: true,
-            secure: false,
-            sameSite: "Lax"
+            secure: true,
+            sameSite: "None",
+            path: "/"
         })
 
         res.status(200).json({message: "Logout successful"});
@@ -201,8 +202,8 @@ router.post('/rememberme', fetchUserByRefreshToken, async (req, res)=>{
 
         res.cookie('refreshToken', refreshToken, {
             httpOnly: true,
-            secure: false,
-            sameSite: "lax",
+            secure: true,
+            sameSite: "None",
             path: '/',
             maxAge: 15*24*60*60*1000
         })
