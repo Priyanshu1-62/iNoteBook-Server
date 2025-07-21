@@ -28,7 +28,10 @@ Update: check out the live app [here](https://i-note-book-two.vercel.app) 🚀
 ---
 
 ### 📦 Data Management
-
+- As server wakes up, a connection is established with MongoDB database. In order to maintain data systematic and consistent, Object data modelling (ODM) technique is employed using Mongoose, which lets you define schemas - blue-prints for creating documents.
+-  User info, Note content and authorization tokens are seggregated into different collections in database for easier maintainence. Notes are paired with their respective user using 'ref' property in Note Schema definition. This property provides referencing between documents like foreign keys in SQL, in a noSQL environment.
+-  Each collection has indexing of _id fields, which enhances data retrieval speed.
+-  Data to be inserted in database is pre-checked using Express validators and custom sanitizers.
 ---
 
 ### 🌍 Deployment
