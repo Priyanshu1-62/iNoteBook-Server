@@ -6,16 +6,28 @@ Update: check out the live app [here](https://i-note-book-two.vercel.app) 🚀
 - [![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?logo=mongodb&logoColor=white)](#)
 - [![🛡️ JWT](https://img.shields.io/badge/🛡️-JWT-purple?style=flat&labelColor=purple)](#)
 - [![🔐 Bcrypt.js](https://img.shields.io/badge/🔐-Bcrypt.js-yellow?style=flat&labelColor=yellow)](#)
-## 🧭 Backend architecture
+### 🧭 Backend architecture
 
-## 🔐 Authentication & Security
+---
 
-## 🧪 API Design & Routing
+### 🔐 Authentication & Security
 
-## 📦 Data Management
+---
 
-## 🌍 Deployment
+### 🧪 API Design & Routing
 
-## 📎 Related Repositories
+---
+
+### 📦 Data Management
+
+---
+
+### 🌍 Deployment
+
+---
+
+### 📎 Related Repositories
+
+---
 
 
