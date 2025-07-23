@@ -20,7 +20,7 @@ Update: check out the live app [here](https://i-note-book-two.vercel.app) 🚀
 ---
 
 ### 🔐 Authentication & Security
-- 
+- Password Hashing and salting: Even if database is compromised, attacker would have very low chance of guessing password of even a single user. Passwords are hashed using one way hashing funciton with slow hashing algorithm. The hash is strengthened even more using 10 rounds of salting. These techniques increases the time to guess common passowrds using Rainbow table 
 ---
 
 ### 🧪 API Design & Routing
