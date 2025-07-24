@@ -30,7 +30,7 @@ Update: check out the live app [here](https://i-note-book-two.vercel.app) 🚀
 
 ### 🧪 API Design & Routing
 - Each route handler has their specific set of Express-validators, custom validators, custom middlewares and structured error handling.
-- __RESTful API design:__ 
+- __RESTful API design:__ Each resource (like users or notes) is treated as stateless, i.e a client to server request contains all necessary data to understand and process the request. Each resource is exposed via meaningful endpoints and standard HTTP methods(GET, POST, PUT, DELETE).
 - __Authentication flow:__ User submit credentials → Server verifies the data and issues an access token → client proceeds based on response.
 - __Authorization flow:__ User makes a request for protected route/ operation -> Server verifies the attached access token in request and sends necesssary data in response-> If response is negative, and the error says "Access token expired", then client will request a re-issue of access token using refresh token and will try making the originally failed request again to server-> Based on server response, client updates the user interface accordingly.
 ---
