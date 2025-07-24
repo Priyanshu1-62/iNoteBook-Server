@@ -12,7 +12,7 @@ Update: check out the live app [here](https://i-note-book-two.vercel.app) 🚀
 
 ### 🗺️ Backend architecture overview
  - This is a Express-based server for iNoteBook web application and handles API requests for authentication, authorization, and notes management.
- - The project follows modular file structure, with Mongoose Schemas and Route handlers spereated w.r.t their rolers for better maintainability and scalability.
+ - The project follows modular file structure. Mongoose Schemas and Route handlers are spereated w.r.t their roles for better maintainability and scalability.
  - Auth endpoint includes route handlers for Signup, Login, GetUser, Refreshing sessions, Logout and RememberMe. Notes module includes routes handlers for Create, Read, Update and Delete operations (CRUD).
  -  Many security practices have been incoorporated in order to sanitize user input, validate input while masking any extra info from brute-force attackers, provide necessaary alert and error messeges, and authorize user with robust JSON web token system coupled with http-only cookies.
  - The server communicates with database (MongoDB Atlas) using Mongoose, a powerful Object Data Modelling (ODM) library.
@@ -29,7 +29,9 @@ Update: check out the live app [here](https://i-note-book-two.vercel.app) 🚀
 ---
 
 ### 🧪 API Design & Routing
-
+- Each route handler has their specific set of Express-validators, custom validators, custom middlewares and error handling.
+- Authentication flow: User submit credentials -> CLient sends the data as a request to server -> Server responds with access token if credentials are valid -> On receiving the response, client either shows an alert message or redirect user to next rote.
+- Authorization flow: User makes a request to a protected route/ operation -> Client sends a request with attached access token to server -> If the token is valid, server responds positively, else sends an error as response -> Client receives the response. If response is negative, and the error says "Access token expired", then client will request server to refresh the access token -> Server will then verify the refresh token and if valid, will re-issue an access token -> Client receives the access token and will use this new token to make the originally failed request again to server -> On verifying the token, server will either deny the request for protected route/operation or send the necessary data -> Client receives the response and updates the user interface accordingly.
 ---
 
 ### 📦 CRUD operations and Data Management
