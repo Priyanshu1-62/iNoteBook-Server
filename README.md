@@ -8,6 +8,8 @@ Update: check out the live app [here](https://i-note-book-two.vercel.app) 🚀
 - [![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?logo=mongodb&logoColor=white)](#)
 - [![🛡️ JWT](https://img.shields.io/badge/🛡️-JWT-purple?style=flat&labelColor=purple)](#)
 - [![🔐 Bcrypt.js](https://img.shields.io/badge/🔐-Bcrypt.js-yellow?style=flat&labelColor=yellow)](#)
+- [![dotenv](https://img.shields.io/badge/dotenv-464646?logo=dotenv&logoColor=white)](#)
+- [![Nodemon](https://img.shields.io/badge/Nodemon-76D04B?logo=nodemon&logoColor=white)](#)
 ---
 
 ### 🗺️ Backend architecture overview
