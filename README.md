@@ -54,4 +54,6 @@ Update: check out the live app [here](https://i-note-book-two.vercel.app) 🚀
 - Frontend: [iNoteBook Frontend](https://github.com/Priyanshu1-62/iNoteBook.git)
 ---
 
-
+## 📛 Badges Credit
+- [shields.io](https://shields.io) for dynamic badge generation  
+- [inttter/md-badges](https://github.com/inttter/md-badges) for curated badge styles and inspirations
