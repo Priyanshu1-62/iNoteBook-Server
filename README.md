@@ -3,6 +3,7 @@ Update: check out the live app [here](https://i-note-book-two.vercel.app) 🚀
 ---
 
 ### 🧰 Tech Stack
+- [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](#)
 - [![NodeJS](https://img.shields.io/badge/Node.js-6DA55F?logo=node.js&logoColor=white)](#)
 - [![Express.js](https://img.shields.io/badge/Express.js-%23404d59.svg?logo=express&logoColor=%2361DAFB)](#)
 - [![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?logo=mongodb&logoColor=white)](#)
@@ -10,6 +11,7 @@ Update: check out the live app [here](https://i-note-book-two.vercel.app) 🚀
 - [![🔐 Bcrypt.js](https://img.shields.io/badge/🔐-Bcrypt.js-yellow?style=flat&labelColor=yellow)](#)
 - [![dotenv](https://img.shields.io/badge/dotenv-464646?logo=dotenv&logoColor=white)](#)
 - [![Nodemon](https://img.shields.io/badge/Nodemon-76D04B?logo=nodemon&logoColor=white)](#)
+- [![Render](https://img.shields.io/badge/Render-46E3B7?logo=render&logoColor=black)](#)
 ---
 
 ### 🗺️ Backend architecture overview
