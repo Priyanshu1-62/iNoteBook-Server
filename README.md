@@ -18,18 +18,18 @@ Update: check out the live app [here](https://i-note-book-two.vercel.app) 🚀
 
 ### ⚙️ Setup
 1) Installation:
-   - git clone https://github.com/Priyanshu1-62/iNoteBook-Server.git
-   - cd iNoteBook-Server
-   - npm install
+   - `git clone https://github.com/Priyanshu1-62/iNoteBook-Server.git`
+   - `cd iNoteBook-Server`
+   - `npm install`
 2) Environment Variables: <br>
    Create a .env file in the project root with the following keys. For Mongo URI, you need to use either MongoDB Atlas, or simply install MongoDB locally.
-   - For MongoDB Atlas: MONGO_URI="mongodb+srv://<username>:<password>@<cluster>.mongodb.net/inotebook"
-   - For locally installed MongoDB: Mongo_URI="mongodb://127.0.0.1:27017/inotebook"
-   - JWT_ACCESS_SECRET="<Use_any_strong_random_string>"
-   - JWT_REFRESH_SECRET="<Use_any_strong_random_string>"
-   - DUMMY_HASH="<Use_any_valid_bcrypt_hash>" <!-- Eg: "$2b$10$CwTycUXWue9zhq1StjUM0uJ8jhOChfG8UJc77WqOkY1h2g1nZ5e8h" , you can use this. -->
+   - For MongoDB Atlas: `MONGO_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/inotebook`
+   - For locally installed MongoDB: `MONGO_URI=mongodb://127.0.0.1:27017/inotebook`
+   - `JWT_ACCESS_SECRET="<Use_any_strong_random_string>"`
+   - `JWT_REFRESH_SECRET="<Use_any_strong_random_string>"`
+   - `DUMMY_HASH="<Use_any_valid_bcrypt_hash>"` Eg: "$2b$10$CwTycUXWue9zhq1StjUM0uJ8jhOChfG8UJc77WqOkY1h2g1nZ5e8h" , you can use this. 
 3) Run Server:
-   - nodemon index.js
+   - `nodemon index.js`
 ---
 
 ### 🗺️ Backend architecture overview
