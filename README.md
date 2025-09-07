@@ -29,7 +29,7 @@ Update: check out the live app [here](https://i-note-book-two.vercel.app) 🚀
    - `JWT_REFRESH_SECRET="<Use_any_strong_random_string>"`
    - `DUMMY_HASH="<Use_any_valid_bcrypt_hash>"` Eg: "$2b$10$CwTycUXWue9zhq1StjUM0uJ8jhOChfG8UJc77WqOkY1h2g1nZ5e8xh" , you can use this. 
 3) Run Server:
-   - `nodemon index.js`
+   - `npx nodemon index.js`
 ---
 
 ### 🗺️ Backend architecture overview
