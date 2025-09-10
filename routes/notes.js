@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const router=express.Router();
 const Notes = require('../models/Notes');
 const {fetchUserByAccessToken, fetchUserByRefreshToken} = require('../middlewares/fetchUser');
+const strToArr = require('../middlewares/strToArr');
 const { body, validationResult } = require('express-validator');
 
 //Read all notes using GET: /api/notes/readNotes
@@ -18,24 +19,33 @@ router.get('/readNotes',  fetchUserByAccessToken, async (req, res)=>{
 })
 
 //Add a new note using POST: /api/notes/addNotes
-router.post('/addNotes',  fetchUserByAccessToken, [
+router.post('/addNotes',  fetchUserByAccessToken, strToArr, [
     body('title')
         .trim()
         .isString()
         .isLength({min: 3})
-        .withMessage("Title must be a string atlest 3 characters long")
+        .withMessage("Title must be a string at least 3 characters long")
         .bail(),
     body('description')
         .trim()
         .isString()
         .isLength({min: 3})
-        .withMessage("Description must be a string atlest 3 characters long")
+        .withMessage("Description must be a string at least 3 characters long")
         .bail(),
     body('tag')
-        .trim()
-        .isString()
-        .isLength({min: 3})
-        .withMessage("Tags must be a string atlest 3 characters long")
+        .isArray()
+        .custom((arr)=>{
+            for(let i=0;i<arr.length;i++){
+                if (typeof arr[i] !== "string"){
+                    throw new Error("Each tag must be a string");
+                }
+                if(arr[i].length<3){
+                    throw new Error("Each tag must be a string at least 3 characters long");
+                }
+            }
+            return true;
+        })
+        .withMessage("Tags must be a string at least 3 characters long")
 ], 
 async (req, res)=>{
     const errors=validationResult(req);
@@ -59,7 +69,7 @@ async (req, res)=>{
 })
 
 //Updating an existing notes using PUT: /api/notes/updateNotes/:id
-router.put('/updateNotes/:id',  fetchUserByAccessToken, [
+router.put('/updateNotes/:id',  fetchUserByAccessToken, strToArr, [
     body('title')
         .optional()
         .isString()
@@ -76,9 +86,18 @@ router.put('/updateNotes/:id',  fetchUserByAccessToken, [
         .bail(),
     body('tag')
         .optional()
-        .isString()
-        .trim()
-        .isLength({min: 3})
+        .isArray()
+        .custom((arr)=>{
+            for(let i=0;i<arr.length;i++){
+                if (typeof arr[i] !== "string"){
+                    throw new Error("Each tag must be a string");
+                }
+                if(arr[i].length<3){
+                    throw new Error("Each tag must be a string at least 3 characters long");
+                }
+            }
+            return true;
+        })
         .withMessage("Tag must be a string with at least 3 characters")
 ], 
 async (req, res)=>{
