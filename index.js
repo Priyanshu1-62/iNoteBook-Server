@@ -7,7 +7,7 @@ const app = express();
 const port = 5000;
 
 app.use(cors({
-  origin: 'https://i-note-book-two.vercel.app',
+  origin: ["http://localhost:5173", "https://i-note-book-two.vercel.app"],
   credentials: true
 }));
 app.use(express.json());
