@@ -18,6 +18,23 @@ router.get('/readNotes',  fetchUserByAccessToken, async (req, res)=>{
     }
 })
 
+//Read a single note using GET: /api/notes/readANote/:id
+router.get('/readANote/:id',  fetchUserByAccessToken, async (req, res)=>{
+    try {
+        const notesID=req.params.id;
+        if (!notesID || !mongoose.Types.ObjectId.isValid(notesID)) return res.status(400).json({errors: "Invalid note ID"});
+        let notes=await Notes.findById(notesID);
+
+        if(!notes) return res.status(404).json({errors: "Note not found"});
+        if(notes.myUser.toString() != req.user.userID) return res.status(403).json({errors: "Forbidden"});
+
+        return res.status(200).json({notes});
+    } 
+    catch (error) {
+        res.status(500).json({errors: "Internal server error"});
+    }
+})
+
 //Add a new note using POST: /api/notes/addNotes
 router.post('/addNotes',  fetchUserByAccessToken, strToArr, [
     body('title')
@@ -34,18 +51,19 @@ router.post('/addNotes',  fetchUserByAccessToken, strToArr, [
         .bail(),
     body('tag')
         .isArray()
+        .withMessage("Please enter a valid set of space separated tags")
+        .bail()
         .custom((arr)=>{
             for(let i=0;i<arr.length;i++){
                 if (typeof arr[i] !== "string"){
                     throw new Error("Each tag must be a string");
                 }
                 if(arr[i].length<3){
-                    throw new Error("Each tag must be a string at least 3 characters long");
+                    throw new Error("Each tag must be at least 3 characters long");
                 }
             }
             return true;
         })
-        .withMessage("Tags must be a string at least 3 characters long")
 ], 
 async (req, res)=>{
     const errors=validationResult(req);
@@ -87,18 +105,19 @@ router.put('/updateNotes/:id',  fetchUserByAccessToken, strToArr, [
     body('tag')
         .optional()
         .isArray()
+        .withMessage("Please enter a valid set of space separated tags")
+        .bail()
         .custom((arr)=>{
             for(let i=0;i<arr.length;i++){
                 if (typeof arr[i] !== "string"){
                     throw new Error("Each tag must be a string");
                 }
                 if(arr[i].length<3){
-                    throw new Error("Each tag must be a string at least 3 characters long");
+                    throw new Error("Each tag must be at least 3 characters long");
                 }
             }
             return true;
         })
-        .withMessage("Tag must be a string with at least 3 characters")
 ], 
 async (req, res)=>{
     const errors=validationResult(req);
