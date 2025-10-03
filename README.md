@@ -16,7 +16,7 @@ Update: check out the live app [here](https://i-note-book-two.vercel.app) 🚀
 - [![Render](https://img.shields.io/badge/Render-46E3B7?logo=render&logoColor=black)](#)
 ---
 
-### ⚙️ Setup
+### ⚙️ Setup (Windows)
 1) Installation:
    - `git clone https://github.com/Priyanshu1-62/iNoteBook-Server.git`
    - `cd iNoteBook-Server`
