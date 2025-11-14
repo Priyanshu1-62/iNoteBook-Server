@@ -7,7 +7,7 @@ const app = express();
 const port = 5000;
 
 app.use(cors({
-  origin: ["http://localhost:5173", "https://i-note-book-two.vercel.app"],
+  origin: true,
   credentials: true
 }));
 app.use(express.json());
@@ -22,6 +22,6 @@ app.get('/', (req, res) => {
   res.send('Hello World!!!')
 });
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`iNoteBook backend listening on http://localhost:${port}`);
 });

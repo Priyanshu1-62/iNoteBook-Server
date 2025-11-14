@@ -1,6 +1,6 @@
 FROM node:22-alpine
 
-WORKDIR /inbserver
+WORKDIR /inotebook-server
 
 COPY package.json ./
 
